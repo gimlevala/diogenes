@@ -1,0 +1,17 @@
+#!/bin/sh
+##dictionary from http://hobonickels.org/alpert04.htm
+max=914
+min=1
+ran=$(($RANDOM%($max-$min+1)+$min))
+prt=$(sed -n ${ran}p ~/scripts/diogenes/.hobo)
+
+reset='\033[0m'
+black='\033[30m'
+yellowb='\033[45m'
+whiteb='\033[47m'
+bold='\033[1m'
+
+a="${reset}${yellowb}${bold}${black}"
+b="${reset}${whiteb}${bold}${black}"
+
+echo -e " ${a} HOBO SLANG OF THE DAY ${reset} : ${b} $prt." ${reset}
